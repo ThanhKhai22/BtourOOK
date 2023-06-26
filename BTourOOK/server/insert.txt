@@ -1,2 +1,0 @@
-INSERT INTO categories (code, value, header, subheader, createdAt, updatedAt) VALUES("DT", "Đặt tour", "Đặt tour du lịch Đà Nẵng", "Đặt tour du lịch tại Đà Nẵng 2023", current_timestamp, current_timestamp);
-INSERT INTO categories (code, value, header, subheader, createdAt, updatedAt) VALUES("DC", "Di chuyển", "Thuê xe di chuyển Đà Nẵng", "Thuê xe di chuyển tại Đà Nẵng 2023", current_timestamp, current_timestamp);
