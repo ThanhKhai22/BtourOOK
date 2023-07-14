@@ -1,16 +1,34 @@
-import React from "react";
-import { Province } from "../../components";
-import { List } from "./index";
+import React, { useEffect } from "react";
+import { Province, ItemSidebar, RelatedPost } from "../../components";
+import { List, Pagination } from "./index";
+import { useDispatch, useSelector } from "react-redux";
+import * as actions from "../../store/actions";
 
 const Homepage = () => {
+  const { categories, prices } = useSelector((state) => state.app);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(actions.getPrices());
+  }, []);
   return (
-    <div className="border border-red-500 w-full flex flex-col gap-3">
+    <div className="w-full flex flex-col gap-3">
       <Province />
       <div className="w-full flex gap-4">
-        <div className="w-[100%]">
+        <div className="w-[70%]">
           <List />
+          <Pagination />
         </div>
-        {/* <div className="w-[30%] border-green-500">Sidebar</div> */}
+        <div className="w-[40%] flex flex-col gap-4 justify-start items-center">
+          <ItemSidebar content={categories} title="Danh sách dịch vụ" />
+          <ItemSidebar
+            isDouble={true}
+            type="priceCode"
+            content={prices}
+            title="Xem theo giá"
+          />
+          <RelatedPost />
+        </div>
       </div>
     </div>
   );

@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "id",
         as: "attributes",
       });
+      Post.belongsTo(models.Overview, {
+        foreignKey: "overviewId",
+        targetKey: "id",
+        as: "overviews",
+      });
       Post.belongsTo(models.User, {
         foreignKey: "userId",
         targetKey: "id",
@@ -34,10 +39,15 @@ module.exports = (sequelize, DataTypes) => {
       address: DataTypes.STRING,
       attributesId: DataTypes.STRING,
       categoryCode: DataTypes.STRING,
+      priceCode: DataTypes.STRING,
+      // areaCode: DataTypes.STRING,
+      provinceCode: DataTypes.STRING,
       description: DataTypes.TEXT,
       userId: DataTypes.STRING,
       overviewId: DataTypes.STRING,
       imagesId: DataTypes.STRING,
+      priceNumber: DataTypes.FLOAT,
+      // areaNumber: DataTypes.FLOAT,
     },
     {
       sequelize,

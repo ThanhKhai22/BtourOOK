@@ -19,10 +19,10 @@ const Contact = () => {
               className="flex flex-col items-center justify-center"
             >
               <span className="text-orange-500 font-semibold">{item.text}</span>
-              <span className="text-blue-900 text-[24px] font-semibold">
+              <span className="text-blue-900 text-[20px] font-semibold">
                 {item.phone}
               </span>
-              <span className="text-blue-900 text-[24px] font-semibold">
+              <span className="text-blue-900 text-[20px] font-semibold">
                 {item.zalo}
               </span>
             </div>

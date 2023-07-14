@@ -17,7 +17,6 @@ const authReducer = (state = initState, action) => {
         token: action.data,
         msg: "",
       };
-
     case actionTypes.REGISTER_FAIL:
     case actionTypes.LOGIN_FAIL:
       return {
@@ -34,6 +33,7 @@ const authReducer = (state = initState, action) => {
         token: null,
         msg: "",
       };
+
     default:
       return state;
   }
